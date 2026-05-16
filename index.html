@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web bán điện thoại</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="header-top bg-dark text-white py-2">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <div class="logo px-2">
+                    <h3 class="m-0 fw-bold text-white"><i class="fa-brands fa-apple"></i> Phone xịn </h3>
+                </div>
+
+                <div class="search-bar d-flex flex-grow-1 mx-4">
+                    <input type="text" class="form-control rounded-0" placeholder="Nhập sản phẩm bạn muốn tìm...">
+                    <button class="btn btn-search rounded-end" style="background-color: #febd69;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <div class="header-nav d-none d-md-flex align-items-center">
+                    <div class="nav-item px-2 text-start" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <small class="d-block text-light" style="font-size: 11px;">Hello, Sign in</small>
+                        <span class="fw-bold fs-6">Account & Lists</span>
+                    </div>
+                    <div class="nav-item px-2 text-start">
+                        <small class="d-block text-light" style="font-size: 11px;">Returns</small>
+                        <span class="fw-bold fs-6">& Orders</span>
+                    </div>
+                    <div class="nav-item px-2 d-flex align-items-end" style="cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                        <i class="fa-solid fa-cart-shopping fs-3"></i>
+                        <span class="fw-bold text-warning ms-1">Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid mt-3">
+        <div class="row">
+            <aside class="col-md-3 col-lg-2 bg-white p-3 border-end d-none d-md-block">
+                <h5 class="fw-bold">Bộ phận</h5> 
+                <ul class="list-unstyled mb-4">
+                    <li><a href="#" class="text-dark text-decoration-none fw-bold">Phụ kiện</a></li>
+                    <li class="ms-3"><a href="#" class="text-dark text-decoration-none">Ốp lưng</a></li>
+                    <li class="ms-3"><a href="#" class="text-dark text-decoration-none">Kính cường lực</a></li>
+                </ul>
+
+                <h5 class="fw-bold">Thương hiệu</h5>
+                <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Apple</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Samsung</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Google</label></div>
+            </aside>
+
+            <section class="col-md-9 col-lg-10">
+                
+                <div id="promoCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.pGXySbux8ImznrLdNQcozwHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" class="d-block w-100" style="height: 250px; object-fit: cover;" alt="Banner 1">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                                <h5>New iPhone 15 Pro</h5>
+                                <p>Titanium. So strong. So light. So Pro.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1200&h=300&q=80" class="d-block w-100" style="height: 250px; object-fit: cover;" alt="Banner 2">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                                <h5>Samsung Galaxy S24 Ultra</h5>
+                                <p>Galaxy AI is here.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+                <div class="mb-3">
+                    <h4 class="fw-bold">Results</h4>
+                </div>
+                
+                <div class="row g-4" id="product-list">
+                    
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                        <div class="card h-100 product-card p-2 bg-white">
+                            <img src="https://m.media-amazon.com/images/I/81Os1SDWpcL._AC_SX679_.jpg" class="card-img-top view-detail" style="height: 200px; object-fit: contain; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#productModal" alt="iPhone">
+                            <div class="card-body p-2 d-flex flex-column">
+                                <h5 class="card-title product-title view-detail" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#productModal">Apple iPhone 15 Pro</h5>
+                                <div class="text-warning mb-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <div class="price fw-bold mb-2 text-danger fs-5">
+                                    <span class="price-whole">15.000.000</span> <span class="price-symbol">vnđ</span>
+                                </div>
+                                <button class="btn btn-add-cart w-100 mt-auto" style="background-color: #ffd814; border-radius: 20px;">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                        <div class="card h-100 product-card p-2 bg-white">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.9pNwwwIVk4SpRE9_NWJN6wHaHl?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" class="card-img-top view-detail" style="height: 200px; object-fit: contain; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#productModal" alt="Samsung">
+                            <div class="card-body p-2 d-flex flex-column">
+                                <h5 class="card-title product-title view-detail" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#productModal">SAMSUNG Galaxy S24 Ultra</h5>
+                                <div class="text-warning mb-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                                <div class="price fw-bold mb-2 text-danger fs-5">
+                                    <span class="price-whole">12.000.000</span> <span class="price-symbol">vnđ</span>
+                                </div>
+                                <button class="btn btn-add-cart w-100 mt-auto" style="background-color: #ffd814; border-radius: 20px;">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title"><i class="fa-brands fa-apple"></i> Đăng nhập Phone xịn</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email / Số điện thoại</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Nhập email">
+                            <small id="emailError" class="text-danger d-none">Vui lòng nhập email hợp lệ!</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Mật khẩu</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Nhập mật khẩu">
+                            <small id="pwError" class="text-danger d-none">Mật khẩu không được để trống!</small>
+                        </div>
+                        <button type="submit" class="btn w-100 fw-bold" style="background-color: #febd69;">Tiếp tục</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng của bạn</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="text-center mt-5">
+                <i class="fa-solid fa-box-open fs-1 text-muted mb-3"></i>
+                <p class="text-muted">Giỏ hàng đang trống.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="detailTitle">Tên sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 text-center">
+                            <img src="" id="detailImage" class="img-fluid rounded" alt="Ảnh SP">
+                        </div>
+                        <div class="col-md-7">
+                            <h3 id="detailPrice" class="text-danger fw-bold mt-3 mt-md-0">Giá</h3>
+                            <p class="text-muted">Mô tả: Sản phẩm chính hãng, bảo hành 12 tháng tại các trung tâm ủy quyền toàn quốc. Hỗ trợ trả góp 0%.</p>
+                            <button class="btn mt-3 w-50 fw-bold" style="background-color: #ffd814; border-radius: 20px;">Thêm vào giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
